@@ -2,12 +2,11 @@ import React from "react";
 import { AppProvider } from "./context/AppContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import AllocationForm from "./components/Allocation";
 import Budget from "./components/Budget";
 import ExpenseList from "./components/ExpenseList";
 import ExpenseTotal from "./components/ExpenseTotal";
 import RemainingBudget from "./components/Remaining";
-
-import AllocationForm from "./forms/Allocation";
 
 const App = () => {
   return (
