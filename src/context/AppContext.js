@@ -98,6 +98,10 @@ export const AppContext = createContext();
 export const AppProvider = (props) => {
   // 4. Sets up the app state. takes a reducer, and an initial state
   const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  const setCurrency = (newCurrency) => {
+    dispatch({ type: "CHG_CURRENCY", payload: newCurrency });
+  };
   let remaining = 0;
   if (state.expenses) {
     const totalExpenses = state.expenses.reduce((total, item) => {
@@ -114,6 +118,7 @@ export const AppProvider = (props) => {
         remaining: remaining,
         dispatch,
         currency: state.currency,
+        setCurrency,
       }}
     >
       {props.children}

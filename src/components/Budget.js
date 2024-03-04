@@ -2,11 +2,17 @@ import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
 
 const Budget = () => {
-  const { budget } = useContext(AppContext);
+  const { budget, currency, setCurrency } = useContext(AppContext);
   const [newBudget, setNewBudget] = useState(budget);
+
   const handleBudgetChange = (event) => {
     setNewBudget(event.target.value);
   };
+
+  const handleCurrencyChange = (event) => {
+    setCurrency(event.target.value);
+  };
+
   return (
     <div
       className="alert alert-secondary"
@@ -18,7 +24,6 @@ const Budget = () => {
       }}
     >
       <span style={{ marginRight: "auto" }}>Budget:</span>
-      <span style={{ fontWeight: "bold" }}>£</span>
       <input
         type="number"
         step="10"
@@ -31,6 +36,17 @@ const Budget = () => {
           boxSizing: "border-box",
         }}
       />
+      <span style={{ marginRight: "auto" }}>Currency:</span>
+      <select
+        value={currency}
+        onChange={handleCurrencyChange}
+        style={{ fontWeight: "bold" }}
+      >
+        <option value="£">£ Pound</option>
+        <option value="€">€ Euro</option>
+        <option value="$">$ Dollar</option>
+        <option value="₹">₹ Rupee</option>
+      </select>
     </div>
   );
 };
