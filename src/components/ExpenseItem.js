@@ -24,12 +24,27 @@ const ExpenseItem = (props) => {
     });
   };
 
+  const decreaseAllocation = (name) => {
+    const expense = {
+      name: name,
+      cost: -10,
+    };
+
+    dispatch({
+      type: "ADD_EXPENSE",
+      payload: expense,
+    });
+  };
+
   return (
     <tr>
       <td>{props.name}</td>
       <td style={{ textAlign: "center" }}>£{props.cost.toLocaleString()}</td>
       <td style={{ textAlign: "center" }}>
         <button onClick={(event) => increaseAllocation(props.name)}>+</button>
+      </td>
+      <td style={{ textAlign: "center" }}>
+        <button onClick={(event) => decreaseAllocation(props.name)}>-</button>
       </td>
       <td style={{ textAlign: "center" }}>
         <TiDelete size="1.5em" onClick={handleDeleteExpense}></TiDelete>

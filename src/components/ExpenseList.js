@@ -17,6 +17,9 @@ const ExpenseList = () => {
             Increase by 10
           </th>
           <th style={{ textAlign: "center" }} scope="col">
+            Decrease by 10
+          </th>
+          <th style={{ textAlign: "center" }} scope="col">
             Delete
           </th>
         </tr>
