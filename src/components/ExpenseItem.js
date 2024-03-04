@@ -4,7 +4,7 @@ import { FaCircleXmark } from "react-icons/fa6";
 import { AppContext } from "../context/AppContext";
 
 const ExpenseItem = (props) => {
-  const { dispatch } = useContext(AppContext);
+  const { currency, dispatch } = useContext(AppContext);
 
   const handleDeleteExpense = () => {
     dispatch({
@@ -40,7 +40,10 @@ const ExpenseItem = (props) => {
   return (
     <tr>
       <td>{props.name}</td>
-      <td style={{ textAlign: "center" }}>£{props.cost.toLocaleString()}</td>
+      <td style={{ textAlign: "center" }}>
+        {currency}
+        {props.cost.toLocaleString()}
+      </td>
       <td style={{ textAlign: "center" }}>
         <FaPlusCircle
           size="1.5em"

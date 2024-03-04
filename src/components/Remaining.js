@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
 
 const Remaining = () => {
-  const { expenses, budget } = useContext(AppContext);
+  const { budget, currency, expenses } = useContext(AppContext);
   const totalExpenses = expenses.reduce((total, item) => {
     return (total = total + item.cost);
   }, 0);
@@ -19,7 +19,8 @@ const Remaining = () => {
     >
       <span style={{ marginRight: "auto" }}>Remaining:</span>
       <span style={{ marginLeft: "auto", fontWeight: "bold" }}>
-        £{(budget - totalExpenses).toLocaleString()}
+        {currency}
+        {(budget - totalExpenses).toLocaleString()}
       </span>
     </div>
   );
