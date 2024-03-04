@@ -27,7 +27,7 @@ const ExpenseItem = (props) => {
   return (
     <tr>
       <td>{props.name}</td>
-      <td style={{ textAlign: "center" }}>£{props.cost}</td>
+      <td style={{ textAlign: "center" }}>£{props.cost.toLocaleString()}</td>
       <td style={{ textAlign: "center" }}>
         <button onClick={(event) => increaseAllocation(props.name)}>+</button>
       </td>
