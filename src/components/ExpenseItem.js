@@ -27,11 +27,11 @@ const ExpenseItem = (props) => {
   return (
     <tr>
       <td>{props.name}</td>
-      <td>£{props.cost}</td>
-      <td>
+      <td style={{ textAlign: "center" }}>£{props.cost}</td>
+      <td style={{ textAlign: "center" }}>
         <button onClick={(event) => increaseAllocation(props.name)}>+</button>
       </td>
-      <td>
+      <td style={{ textAlign: "center" }}>
         <TiDelete size="1.5em" onClick={handleDeleteExpense}></TiDelete>
       </td>
     </tr>
