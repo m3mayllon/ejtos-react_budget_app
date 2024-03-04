@@ -8,8 +8,19 @@ const Remaining = () => {
   }, 0);
   const alertType = totalExpenses > budget ? "alert-danger" : "alert-success";
   return (
-    <div className={`alert ${alertType}`}>
-      <span>Remaining: £{budget - totalExpenses}</span>
+    <div
+      className={`alert ${alertType}`}
+      style={{
+        display: "flex",
+        alignItems: "center",
+        marginLeft: "10px",
+        height: "60px",
+      }}
+    >
+      <span style={{ marginRight: "auto" }}>Remaining:</span>
+      <span style={{ marginLeft: "auto", fontWeight: "bold" }}>
+        £{(budget - totalExpenses).toLocaleString()}
+      </span>
     </div>
   );
 };

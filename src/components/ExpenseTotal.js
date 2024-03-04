@@ -7,8 +7,19 @@ const ExpenseTotal = () => {
     return (total += item.cost);
   }, 0);
   return (
-    <div className="alert alert-primary">
-      <span>Spent so far: £{totalExpenses}</span>
+    <div
+      className="alert alert-primary"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        marginLeft: "10px",
+        height: "60px",
+      }}
+    >
+      <span style={{ marginRight: "auto" }}>Spent so far:</span>
+      <span style={{ marginLeft: "auto", fontWeight: "bold" }}>
+        £{totalExpenses.toLocaleString()}
+      </span>
     </div>
   );
 };
