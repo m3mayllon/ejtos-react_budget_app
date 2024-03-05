@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import AllocationForm from "./components/Allocation";
 import Budget from "./components/Budget";
+import Currency from "./components/Currency";
 import ExpenseList from "./components/ExpenseList";
 import ExpenseTotal from "./components/ExpenseTotal";
 import RemainingBudget from "./components/Remaining";
@@ -15,6 +16,7 @@ const App = () => {
         <h1 className="mt-3">Company's Budget Allocation</h1>
         <div className="row mt-3">
           <div className="col-sm">
+            <Currency />
             <Budget />
           </div>
           <div className="col-sm">
