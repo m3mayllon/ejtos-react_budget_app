@@ -35,7 +35,7 @@ const AllocationForm = (props) => {
   return (
     <div>
       <div className="row">
-        <div className="input-group mb-3" style={{ marginLeft: "2rem" }}>
+        <div className="input-group mb-3">
           <div className="input-group-prepend">
             <label className="input-group-text" htmlFor="inputGroupSelect01">
               Department
@@ -45,6 +45,7 @@ const AllocationForm = (props) => {
             className="custom-select"
             id="inputGroupSelect01"
             onChange={(event) => setName(event.target.value)}
+            style={{ width: "120px" }}
           >
             <option defaultValue>Choose...</option>
             <option value="Marketing" name="marketing">
@@ -77,6 +78,7 @@ const AllocationForm = (props) => {
             className="custom-select"
             id="inputGroupSelect02"
             onChange={(event) => setAction(event.target.value)}
+            style={{ width: "120px" }}
           >
             <option defaultValue value="Add" name="Add">
               Add
@@ -91,15 +93,11 @@ const AllocationForm = (props) => {
             type="number"
             id="cost"
             value={cost}
-            style={{ marginLeft: "2rem", size: 10 }}
             onChange={(event) => setCost(event.target.value)}
+            style={{ marginLeft: "2rem", size: 10, width: "100px" }}
           ></input>
 
-          <button
-            className="btn btn-primary"
-            onClick={submitEvent}
-            style={{ marginLeft: "2rem" }}
-          >
+          <button className="btn btn-primary" onClick={submitEvent}>
             Save
           </button>
         </div>
