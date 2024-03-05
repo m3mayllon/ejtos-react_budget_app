@@ -27,11 +27,9 @@ const Budget = () => {
         value={newBudget}
         onChange={handleBudgetChange}
         style={{
-          paddingLeft: "25px",
           fontWeight: "bold",
           height: "30px",
           width: "100px",
-          boxSizing: "border-box",
         }}
       />
     </div>
