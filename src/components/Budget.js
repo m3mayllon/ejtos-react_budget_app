@@ -6,7 +6,10 @@ const Budget = () => {
   const [newBudget, setNewBudget] = useState(budget);
 
   const handleBudgetChange = (event) => {
-    setNewBudget(event.target.value);
+    const value = event.target.value;
+    if (value >= 0) {
+      setNewBudget(value);
+    }
   };
 
   return (
