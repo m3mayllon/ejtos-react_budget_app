@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
+import commonStyle from "../styles";
 
 const Budget = () => {
   const { budget, currency, dispatch, expenses } = useContext(AppContext);
@@ -24,15 +25,7 @@ const Budget = () => {
   };
 
   return (
-    <div
-      className="alert alert-secondary"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        marginLeft: "10px",
-        height: "60px",
-      }}
-    >
+    <div className="alert alert-secondary" style={commonStyle}>
       <span style={{ marginRight: "auto" }}>Budget:</span>
       <span style={{ fontWeight: "bold" }}>{currency}</span>
       <input

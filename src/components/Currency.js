@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import commonStyle from "../styles";
 
 const Currency = () => {
   const { currency, setCurrency } = useContext(AppContext);
@@ -9,15 +10,7 @@ const Currency = () => {
   };
 
   return (
-    <div
-      className="alert alert-secondary"
-      style={{
-        display: "flex",
-        alignItems: "center",
-        marginLeft: "10px",
-        height: "60px",
-      }}
-    >
+    <div className="alert alert-secondary" style={commonStyle}>
       <span style={{ marginRight: "auto" }}>Currency:</span>
       <select
         value={currency}
