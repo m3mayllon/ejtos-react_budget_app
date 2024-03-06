@@ -7,6 +7,7 @@ const Budget = () => {
 
   const handleBudgetChange = (event) => {
     const value = event.target.value;
+
     const totalExpenses = expenses.reduce(
       (total, item) => total + item.cost,
       0
